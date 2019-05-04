@@ -7,7 +7,7 @@ class JobManager():
     def __init__(self, pi):
         self.angry_action_thread = None
         self.pi = pi
-        self.sound = SoundController('chick-cry.mp3')
+        self.sound = SoundController('/home/pi/Projects/angry-robot/chick-cry.mp3')
 
     def run(self):
         if self.angry_action_thread is None:

@@ -1,0 +1,17 @@
+[Unit]
+Description = uWSGI
+After = syslog.target
+
+[Service]
+ExecStart = /home/pi/Projects/angry-robot/venv/bin/uwsgi --ini /home/pi/Projects/angry-robot/uwsgi.ini
+#Restart=always
+Restart=on-failure
+KillSignal=SIGQUIT
+Type=notify
+StandardError=syslog
+NotifyAccess=all
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+
